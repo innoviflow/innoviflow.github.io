@@ -6,12 +6,23 @@
   
   body {
     margin: 0;
-    height: 100vh;
+    height: 80vh;
     padding: 0;
     border: 0;
     background: linear-gradient(to bottom right,  #F1F2B5, #eef2f3);
   }
   
+  header{
+    display:block;
+    
+  }
+
+  main{
+    display:block;
+    margin-top: 60px;
+    
+  }
+
   .form {
     background-color: #fff;
     height: 240px;
@@ -92,6 +103,7 @@
     padding-left: 30px;
     cursor: pointer;
     user-select: none;
+    width: unset;
   }
   
   .container input {
