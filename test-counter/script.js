@@ -31,7 +31,7 @@ resetButton.addEventListener('click', () => {
 
 function evaluateScore () {
   if ((correctCount + incorrectCount)>0)
-  score = Math.max(0,100*correctCount/(correctCount + incorrectCount));
+  score = Math.max(0,Math.floor(100*correctCount/(correctCount + incorrectCount)));
 else 
   score = 0;
 
