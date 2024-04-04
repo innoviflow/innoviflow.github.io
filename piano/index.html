@@ -1,0 +1,65 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Play piano online</title>
+    <meta name="description" content="Create music with full 88-key piano. You can play this virtual instrument with keyboard, mouse or touchscreen.">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            overflow: hidden;
+            touch-action: none;
+            -ms-touch-action: none;
+        }
+        
+        body {
+            background-image: url(/images/Bontecou_Lake_Milky_Way_panorama_by_Juliancolton.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        
+        canvas {
+            touch-action-delay: none;
+            touch-action: none;
+            -ms-touch-action: none;
+        }
+    </style>
+</head>
+<body>
+    
+        <div id="c2canvasdiv" style="width: 496px; height: 739px; margin-left: 0px; margin-top: 0px;">
+            <canvas id="c2canvas" width="620" height="924" style="width: 496px; height: 739px;">
+                <h1>Play piano online</h1>
+            </canvas>
+        </div>
+  
+        <script src="./bundle.js"></script>
+  
+        <script>
+            $(function () { cr_createRuntime("c2canvas") });
+            
+            function onVisibilityChanged() {
+                if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
+                    cr_setSuspended(true);
+                else
+                    cr_setSuspended(false);
+            };
+            
+            document.addEventListener("visibilitychange", onVisibilityChanged, false);
+            document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
+            document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
+            document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
+        </script>
+        
+        <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;e9827e9fcb414a16849b303609303286&quot;}"></script>
+    
+  
+  </body>
+    

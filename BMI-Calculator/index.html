@@ -2,27 +2,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </head>
   <body>
-    <header>
-    <!-- Navbar -->
+
+      <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container-fluid">
           <button
-            class="navbar-toggler"
+            class="navbar-toggler collapsed"
             type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#navbarExample01"
+            data-toggle="collapse"
+            data-target="#navbarExample01"
             aria-controls="navbarExample01"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <i class="fas fa-bars"></i>
+          <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarExample01">
+          <div class="navbar-collapse collapse" id="navbarExample01">
+            <a class="navbar-brand" href="#"><img src="../Innoviflow_Short_3D_Logo.png"  width="42" height="42"></a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item active">
-                <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../test-counter/index.html">Test Counter</a>
@@ -37,29 +40,42 @@
           </div>
         </div>
       </nav>
-    </header>
-    <main>
-    <h3><b>B</b>ody <b>M</b>ass <b>I</b>ndex Calculator</h3>
-  <form class="form" id="form" onsubmit="return validateForm()">
-  <div class="row-one">
-    <input type="text" class="text-input" id="age" autocomplete="off" required/><p class="text">Age</p>
-    <label class="container">
-    <input type="radio" name="radio" id="f"><p class="text">Female</p>
-      <span class="checkmark"></span>
-    </label>
-    <label class="container">
-    <input type="radio" name="radio" id="m"><p class="text">Male</p>
-      <span class="checkmark"></span>
-    </label>
-    </div>
+
+
+      <div class="card mx-auto position-relative px-5" style="width: 750px;margin-top: 78px;">
+        <div class="card-body p-5 m-3 position-relative d-flex flex-column">
+          <h3 class="row">Body Mass Index Calculator</h3>
+          <form id="form" onsubmit="return validateForm()" onreset="return resetForm()">
+            <div class="row">
+              <div class="col"><p class="text">Age <input type="text" class="col text-input" id="age" autocomplete="off" required/></p></div>
+            </div>
+            <div class="row">
+              <div class ="col"><p class="text">Gender</p></div>
+              <label class="col">
+              <input type="radio" name="radio" id="f"><p class="text">Female</p>
+                <span class="checkmark"></span>
+              </label>
+              <label class="col">
+              <input type="radio" name="radio" id="m"><p class="text">Male</p>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="row">
+              <div class="col"><p class="text">Height (cm) <input type="text" class="text-input" id="height" autocomplete="off" required></p></div>
+              <div class="col"><p class="text">Weight (kg) <input type="text" class="text-input" id="weight" autocomplete="off" required></p></div>
+            </div>
+            <div class="row">
+              <div class="col"><button type="button" class="btn btn-primary" id="submit">Submit</button></div>
+              <div class="col"><button type="button" class="btn btn-light" id="reset-button" >Reset</button></div>
+            </div>
+          </form>
+          <div class="d-none p-5 m-3 position-relative d-flex flex-column" id="resultWrapper">
+            <div class="text-center" id="result">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </body>
   
-  <div class="row-two">
-    <input type="text" class="text-input" id="height" autocomplete="off" required><p class="text">Height (cm)</p>
-    <input type="text" class="text-input" id="weight" autocomplete="off" required><p class="text">Weight (kg)</p>
-  </div>
-  <button type="button" id="submit">Submit</button>
-  </form>
-</main>
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-</body>

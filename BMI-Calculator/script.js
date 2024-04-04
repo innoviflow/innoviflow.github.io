@@ -15,6 +15,13 @@ function validateForm(){
 }
 document.getElementById("submit").addEventListener("click", validateForm);
 
+function resetForm(){
+  form.reset();
+  var resultElem = document.getElementById("resultWrapper");
+  resultElem.classList.toggle("d-none");
+}
+document.getElementById("reset-button").addEventListener("click", resetForm);
+
 function countBmi(){
   var p = [age.value, height.value, weight.value];
   if(male.checked){
@@ -22,7 +29,7 @@ function countBmi(){
   }else if(female.checked){
     p.push("female");
   }
-  form.reset();
+  //form.reset();
   var bmi = Number(p[2])/(Number(p[1])/100*Number(p[1])/100);
       
   var result = '';
@@ -49,8 +56,10 @@ function countBmi(){
   h2.appendChild(b);
   h2.appendChild(r);
   
-  document.body.appendChild(h1);
-  document.body.appendChild(h2);
+  var resultElem = document.getElementById("resultWrapper");
+  document.getElementById("result").appendChild(h1);
+  document.getElementById("result").appendChild(h2);
+  resultElem.classList.toggle("d-none");
   document.getElementById("submit").removeEventListener("click", countBmi);
   document.getElementById("submit").removeEventListener("click", validateForm);
 }
